@@ -42,3 +42,13 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+.byebug_history
+.rubocop.yml
+.rubocop_disabled.yml
+.rubocop_enabled.yml
+Gemfile.lock
+/config/database.yml
+
+#config/settings.local.yml
+#config/settings/*.local.yml
+#config/environments/*.local.yml
