@@ -32,7 +32,40 @@
 en:
   layouts:
     application:
-      apptitle: "Ecommerce42"
+      apptitle: "Luxury Watch"
+    header:
+      title: "Luxury Watch"
+      login: "LOGIN"
+      signup: "SIGN UP"
+      empty_cart: "Empty Cart"
+      home: "Home"
+      products: "Products"
+      about: "About"
+      men: "Men"
+      woman: "Woman"
+      kids: "Kids"
+      casio: "Casio"
+      search: "Search"
+    footer:
+      follow: "Follow Us"
+      info: "Information"
+      account: "My Account"
+      store: "Store Information"
+      num: "+955 123 4567"
+      email: "contact@example.com"
+      enter: Enter Your Email"
+      sub: "Subscribe"
+      foot: "© 2018 Luxury Watches. All Rights Reserved "
+      fb: "Facebook"
+      gg: "Google+"
+      special: "Specials"
+      personal_info: "My Personal info"
+  static_pages:
+    home:
+      content1: "Nulla maximus nunc"
+      content2: "In sit amet sapien eros Integer dolore magna aliqua"
+    about:
+      about: "#About Page..."
   public:
     404:
       title: "The page you were looking for doesn't exist (404)"
