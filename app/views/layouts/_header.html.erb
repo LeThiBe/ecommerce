@@ -1,0 +1,79 @@
+<!--top-header-->
+<div class="top-header">
+  <div class="container">
+    <div class="top-header-main">
+      <div class="col-md-6 top-header-left">
+          <%= link_to t(".login"), "javascript:;", class: "label head" %> |
+          <%= link_to t(".signup"), "javascript:;", class: "label head" %>
+      </div>
+      <div class="col-md-6 top-header-right">
+        <div class="cart box_1">
+          <a href="javascript:;">
+             <div class="total">
+              <span class="simpleCart_total"></span></div>
+              <%= image_tag "cart-1.png", alt: "cart-1.png" %>
+          </a>
+          <p><%= link_to t(".empty_cart"), "javascript:;", class: "simpleCart_empty" %></p>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!--top-header-->
+<!--start-logo-->
+<div class="logo">
+  <%= link_to root_path do %>
+    <h1><%= t ".title" %></h1>
+  <% end %>
+</div>
+<!--start-logo-->
+<!--bottom-header-->
+<div class="header-bottom">
+  <div class="container">
+    <div class="header">
+      <div class="col-md-9 header-left">
+      <div class="top-nav">
+        <ul class="memenu skyblue"><li class="active"><%= link_to t(".home"), root_path %></li>
+          <li class="grid"><%= link_to t(".products"), "#" %>
+            <div class="mepanel">
+              <div class="row">
+                <div class="col1 me-one">
+                  <h4><%= t ".men" %></h4>
+                  <ul>
+                    <li><%= link_to t(".category"), "#" %></li>
+                  </ul>
+                </div>
+                <div class="col1 me-one">
+                  <h4><%= t ".woman" %></h4>
+                  <ul>
+                    <li><%= link_to t(".category"), "#" %></li>
+                  </ul>
+                </div>
+                <div class="col1 me-one">
+                  <h4><%= t ".kids" %></h4>
+                  <ul>
+                    <li><%= link_to t(".category"), "#" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="grid"><%= link_to t(".about"), about_path %>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-3 header-right">
+      <div class="search-bar">
+        <input type="text" value= <%= t ".search" %> onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+        <input type="submit" value="">
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+    </div>
+  </div>
+</div>
+<!--bottom-header-->

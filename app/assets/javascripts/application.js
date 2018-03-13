@@ -10,6 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery.turbolinks
 //= require rails-ujs
+//= require bootstrap
 //= require turbolinks
+//= require imagezoom
+//= require memenu
+//= require simpleCart.min
+//= require jquery.easydropdown
+//= require jquery.flexslider
+//= require responsiveslides.min
 //= require_tree .
