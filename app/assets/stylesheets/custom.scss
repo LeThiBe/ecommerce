@@ -9,6 +9,7 @@ $red2: #730E15;
 $white3: #F7F7F7;
 $light1: #DADADA;
 $grey1: #666;
+$black2: #000;
 
 .rails-default-error-page {
   background-color: $white1;
@@ -60,4 +61,17 @@ $grey1: #666;
 
 .head{
   font-size: 90%;
+}
+
+.account-left input[type="email"] {
+  width: 90%;
+  margin: 0px;
+  color: $black2;
+  background: none;
+  padding: 8px 10px;
+  outline: none;
+  border: 1px solid $black2;
+  font-family: 'Lato-Regular';
+  font-size: 14px;
+  margin-bottom:20px;
 }

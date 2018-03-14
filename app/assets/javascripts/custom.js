@@ -8,10 +8,10 @@ $(document).ready(function() {
     speed: 500,
     namespace: 'callbacks',
     before: function () {
-      $('.events').append('<li>before event fired.</li>');
+      $('.events').append(I18n.t('custom.append.before'));
     },
     after: function () {
-      $('.events').append('<li>after event fired.</li>');
+      $('.events').append(I18n.t('custom.append.after'));
     }
   });
 });
