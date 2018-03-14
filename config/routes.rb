@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/register", to: "users#new"
   post "/register", to: "users#create"
   resources :users
+  resources :account_activations, only: :edit
 end

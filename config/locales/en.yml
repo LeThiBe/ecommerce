@@ -30,6 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      hi: "Hi %{name}"
+      content: "Welcome to the Luxury Watchs! Click on the link below to activate your account:"
+      title: "Luxury Watchs"
+      active: "Activate"
+  account_activations:
+    edit:
+      activated: "Account activated!"
+      unactivated: "Invalid activation link"
   shared:
     error_messages:
       form_error: "The form contains"
@@ -37,6 +48,9 @@ en:
     navbar:
       home: "Home"
   users:
+    create:
+      welcome: "Welcome to the Luxury Watchs!"
+      info: "Please check your email to activate your account."
     form:
       name: "Full name"
       email: "Email"
