@@ -4,7 +4,7 @@
     <div class="top-header-main">
       <div class="col-md-6 top-header-left">
           <%= link_to t(".login"), "javascript:;", class: "label head" %> |
-          <%= link_to t(".signup"), "javascript:;", class: "label head" %>
+          <%= link_to t(".register"), register_path, class: "label head" %>
       </div>
       <div class="col-md-6 top-header-right">
         <div class="cart box_1">
@@ -35,7 +35,9 @@
     <div class="header">
       <div class="col-md-9 header-left">
       <div class="top-nav">
-        <ul class="memenu skyblue"><li class="active"><%= link_to t(".home"), root_path %></li>
+        <ul class="memenu skyblue">
+          <li class="grid"><%= link_to t(".home"), root_path %></li>
+          <li class="grid"><%= link_to t(".about"), about_path %></li>
           <li class="grid"><%= link_to t(".products"), "#" %>
             <div class="mepanel">
               <div class="row">
@@ -60,8 +62,7 @@
               </div>
             </div>
           </li>
-          <li class="grid"><%= link_to t(".about"), about_path %>
-          </li>
+          <li class="grid"><%= link_to t(".suggests"), "#" %></li>
         </ul>
       </div>
       <div class="clearfix"> </div>

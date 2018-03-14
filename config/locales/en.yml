@@ -30,13 +30,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  shared:
+    error_messages:
+      form_error: "The form contains"
+      error: "error"
+    navbar:
+      home: "Home"
+  users:
+    form:
+      name: "Full name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+    new:
+      title: "Register"
+      register: "REGISTER"
+      btn_signup: "Submit"
+  custom:
+    append:
+      before: "<li>before event fired.</li>"
+      after: "<li>after event fired.</li>"
   layouts:
     application:
       apptitle: "Luxury Watch"
     header:
       title: "Luxury Watch"
       login: "LOGIN"
-      signup: "SIGN UP"
+      register: "REGISTER"
       empty_cart: "Empty Cart"
       home: "Home"
       products: "Products"
@@ -46,6 +68,7 @@ en:
       kids: "Kids"
       casio: "Casio"
       search: "Search"
+      suggests: "Suggests"
     footer:
       follow: "Follow Us"
       info: "Information"
@@ -81,4 +104,3 @@ en:
       title: "We're sorry, but something went wrong (500)"
       content1: "We're sorry, but something went wrong."
       content2: "If you are the application owner check the logs for more information."
-
