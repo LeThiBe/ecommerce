@@ -1,0 +1,35 @@
+<% provide :title, t(".title") %>
+<%= render "shared/navbar" %>
+<div class="account">
+  <div class="container">
+    <div class="account-top heading">
+      <h2><%= t ".login" %></h2>
+    </div>
+    <div class="account-main">
+      <div class="col-md-6 account-left">
+        <h3><%= t ".exits_user" %></h3>
+        <div class="account-bottom">
+          <%= form_for :session, url: login_path do |f| %>
+            <%= f.email_field :email, placeholder: t(".email"), required: true %>
+            <%= f.password_field :password, placeholder: t(".password"), required: true %>
+          <div class="address">
+            <%= f.label :remember_me do %>
+              <%= f.check_box :remember_me %>
+              <span><%= t ".remember_me" %></span>
+            <% end %>
+            <div class="clearfix"></div>
+            <%= link_to t(".forgot_pass"), "#",class: "forgot" %>
+            <%= f.submit t(".title") %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-6 account-right account-left">
+        <h3><%= t ".new_user" %></h3>
+        <p><%= t ".content" %></p>
+        <%= link_to t(".create"), "#" %>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
