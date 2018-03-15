@@ -1,2 +1,6 @@
 user:
   avatar_size: 50
+  email_max_length: 255
+  name_max_length: 50
+  password_min_length: 6
+  hour_expired: 2
