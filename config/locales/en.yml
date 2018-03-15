@@ -30,6 +30,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  sessions:
+    new:
+      title: "Login"
+      login: "LOGIN"
+      exits_user: "Existing User"
+      email: "Email"
+      password: "Password"
+      forgot_pass: "Forgot Your Password?"
+      new_user: "New User? Create an Account"
+      content: "By creating an account with our store, you will be able to move through the checkout process faster,
+        store multiple shipping addresses, view and track your orders in your account and more."
+      create: "Create an Account"
+      remember_me: "Remember me"
+    create:
+      login_error: "Invalid email/password combination"
+      message: "Account not activated. Check your email for the activation link"
   user_mailer:
     account_activation:
       subject: "Account activation"
@@ -83,6 +99,9 @@ en:
       casio: "Casio"
       search: "Search"
       suggests: "Suggests"
+      profile: "Profile"
+      hi: "Hi, %{name}!"
+      logout: "Logout"
     footer:
       follow: "Follow Us"
       info: "Information"

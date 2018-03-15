@@ -3,8 +3,14 @@
   <div class="container">
     <div class="top-header-main">
       <div class="col-md-6 top-header-left">
-          <%= link_to t(".login"), "javascript:;", class: "label head" %> |
+        <% if logged_in? %>
+          <span class="label head"><%= t ".hi", name: current_user.name %></span>&nbsp;|
+          <%= link_to t(".profile"), "#", class: "label head" %>&nbsp;|
+          <%= link_to t(".logout"), logout_path, method: :delete, class: "label head" %>
+        <% else %>
+          <%= link_to t(".login"), login_path, class: "label head" %>&nbsp;|
           <%= link_to t(".register"), register_path, class: "label head" %>
+        <% end %>
       </div>
       <div class="col-md-6 top-header-right">
         <div class="cart box_1">
