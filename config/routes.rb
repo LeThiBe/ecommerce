@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get "sessions/new"
 
   root "static_pages#home"
   get "/about", to: "static_pages#about"
@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users
   resources :account_activations, only: :edit
+  namespace :admin do
+    root to: "static_pages#home"
+    resources :admins
+  end
 end

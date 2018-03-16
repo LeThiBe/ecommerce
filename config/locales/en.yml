@@ -64,6 +64,11 @@ en:
     navbar:
       home: "Home"
   users:
+    show:
+      name: "Name:"
+      email: "Email:"
+      phone: "Phone:"
+      address: "Address:"
     create:
       welcome: "Welcome to the Luxury Watchs!"
       info: "Please check your email to activate your account."
@@ -83,6 +88,17 @@ en:
       before: "<li>before event fired.</li>"
       after: "<li>after event fired.</li>"
   layouts:
+    admin:
+      header:
+        logo: "ADMINS"
+        search: " Search"
+        user: "User"
+        profile: "Profile"
+        settings: "Settings"
+        log_out: "Log Out"
+        month: "One month"
+      footer:
+        content: "© 2018 Admins. All rights reserved"
     application:
       apptitle: "Luxury Watch"
     header:
@@ -120,8 +136,27 @@ en:
     home:
       content1: "Nulla maximus nunc"
       content2: "In sit amet sapien eros Integer dolore magna aliqua"
+      slide1: "slide1"
+      slide2: "slide2"
+      slide3: "slide3"
+      previous: "Previous"
+      next: "Next"
     about:
       about: "#About Page..."
+  admin:
+    static_pages:
+      home:
+        dashboard: "Dashboard"
+        users: "Users"
+        categories: "Categories"
+        products: "Products"
+        pays: "Pays"
+        oders: "Oders"
+        request: "List request"
+        views: "Views"
+        num1: "13,500"
+        num2: "1,250"
+        num3: "1,500"
   public:
     404:
       title: "The page you were looking for doesn't exist (404)"
