@@ -18,10 +18,4 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require imagezoom
-//= require memenu
-//= require simpleCart.min
-//= require jquery.easydropdown
-//= require jquery.flexslider
-//= require responsiveslides.min
-//= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/public

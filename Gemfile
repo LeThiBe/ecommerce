@@ -16,10 +16,12 @@ gem "bootstrap-sass", "3.3.7"
 gem "puma", "3.9.1"
 gem "sass-rails", "5.0.6"
 gem "uglifier", "3.2.0"
-gem "coffee-rails", "4.2.2"
-gem "jquery-rails", "4.3.1"
+gem "bootstrap-sass", "3.3.7"
 gem "jquery-turbolinks"
-gem "turbolinks", "5.0.1"
+gem "jquery-rails"
+gem "font-awesome-rails"
+gem "coffee-rails", "~> 4.2"
+gem "turbolinks", "~> 5"
 gem "jbuilder", "2.7.0"
 gem "mysql2"
 gem "config"
@@ -51,3 +53,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "rubocop", "~> 0.46.0", require: false

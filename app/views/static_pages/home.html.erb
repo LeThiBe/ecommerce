@@ -1,20 +1,40 @@
 <!--banner-starts-->
-<div class="bnr" id="home">
-  <div  id="top" class="callbacks_container">
-    <ul class="rslides" id="slider4">
-      <li>
-        <%= image_tag "bnr-1.jpg", alt: "slide1" %>
-      </li>
-      <li>
-        <%= image_tag "bnr-2.jpg", alt: "slide2" %>
-      </li>
-      <li>
-        <%= image_tag "bnr-3.jpg", alt: "slide2" %>
-      </li>
-    </ul>
+
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag image_url("bnr-1.jpg"), alt: t(".slide1") %>
+      </div>
+
+      <div class="item">
+        <%= image_tag image_url("bnr-2.jpg"), alt: t(".slide2") %>
+      </div>
+
+      <div class="item">
+        <%= image_tag image_url("bnr-3.jpg"), alt: t(".slide3") %>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon"><%= image_tag image_url("prev.png"), alt: t(".previous") %></span>
+      <span class="sr-only"><%= t ".previous" %></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon"><%= image_tag image_url("next.png"), alt: t(".next") %></span>
+      <span class="sr-only"><%= t ".next" %></span>
+    </a>
   </div>
-  <div class="clearfix"> </div>
 </div>
+
 <!--banner-ends-->
 <!--about-starts-->
 <div class="about">
