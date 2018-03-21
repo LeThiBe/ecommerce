@@ -1,6 +1,5 @@
 class Picture < ApplicationRecord
   belongs_to :product
-
   validates :product_id, presence: true
   validates :url_picture, presence: true
 
