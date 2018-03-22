@@ -18,9 +18,9 @@
             <div class="total">
               <span class="simpleCart_total"></span>
             </div>
-            <%= image_tag "cart-1.png", alt: "cart-1.png" %>
+            <%= link_to image_tag("cart-1.png"), current_cart, alt: "cart" %>
           </a>
-          <p><%= link_to t(".empty_cart"), "javascript:;", class: "simpleCart_empty" %></p>
+          <p><%= link_to t(".empty_cart"), @cart, :method => :delete, data: {:confirm => t(".confirm") }, class: "simpleCart_empty" %></p>
           <div class="clearfix"> </div>
         </div>
       </div>

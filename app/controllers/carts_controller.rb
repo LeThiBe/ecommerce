@@ -65,13 +65,13 @@ class CartsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cart
-      @cart = Cart.find_by id: params[:id]
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def cart_params
-      params.fetch :cart, {}
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cart
+    @cart = Cart.find_by id: params[:id]
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def cart_params
+    params.fetch :cart, {}
+  end
+end

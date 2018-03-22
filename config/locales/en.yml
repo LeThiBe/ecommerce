@@ -38,6 +38,23 @@ en:
     destroy:
       notice2: "Cart was successfully destroyed."
       erro: "Can't destroy item"
+    cart:
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total "
+      subtotal: "Subtotal"
+      checkout: "Checkout"
+      empty: "Empty cart"
+      confirm: "Are you sure?"
+      continue: "Continue Shopping"
+  line_items:
+    create:
+      create_success: "Added item to cart"
+      create_failed: "Can not add item to cart"
+  model:
+    product:
+      error: "This product has a LineItem"
   products:
     show:
       mess: "Don't find Product"
