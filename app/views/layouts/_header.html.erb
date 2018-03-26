@@ -4,20 +4,21 @@
     <div class="top-header-main">
       <div class="col-md-6 top-header-left">
         <% if logged_in? %>
-          <span class="label head"><%= t ".hi", name: current_user.name %></span>&nbsp;|
-          <%= link_to t(".profile"), current_user, class: "label head" %>&nbsp;|
-          <%= link_to t(".logout"), logout_path, method: :delete, class: "label head" %>
+        <span class="label head"><%= t ".hi", name: current_user.name %></span>&nbsp;|
+        <%= link_to t(".profile"), current_user, class: "label head" %>&nbsp;|
+        <%= link_to t(".logout"), logout_path, method: :delete, class: "label head" %>
         <% else %>
-          <%= link_to t(".login"), login_path, class: "label head" %>&nbsp;|
-          <%= link_to t(".register"), register_path, class: "label head" %>
+        <%= link_to t(".login"), login_path, class: "label head" %>&nbsp;|
+        <%= link_to t(".register"), register_path, class: "label head" %>
         <% end %>
       </div>
       <div class="col-md-6 top-header-right">
         <div class="cart box_1">
           <a href="javascript:;">
-             <div class="total">
-              <span class="simpleCart_total"></span></div>
-              <%= image_tag "cart-1.png", alt: "cart-1.png" %>
+            <div class="total">
+              <span class="simpleCart_total"></span>
+            </div>
+            <%= image_tag "cart-1.png", alt: "cart-1.png" %>
           </a>
           <p><%= link_to t(".empty_cart"), "javascript:;", class: "simpleCart_empty" %></p>
           <div class="clearfix"> </div>
@@ -31,7 +32,7 @@
 <!--start-logo-->
 <div class="logo">
   <%= link_to root_path do %>
-    <h1><%= t ".title" %></h1>
+  <h1><%= t ".title" %></h1>
   <% end %>
 </div>
 <!--start-logo-->
@@ -40,46 +41,47 @@
   <div class="container">
     <div class="header">
       <div class="col-md-9 header-left">
-      <div class="top-nav">
-        <ul class="memenu skyblue">
-          <li class="grid"><%= link_to t(".home"), root_path %></li>
-          <li class="grid"><%= link_to t(".about"), about_path %></li>
-          <li class="grid"><%= link_to t(".products"), "#" %>
-            <div class="mepanel">
-              <div class="row">
-                <div class="col1 me-one">
-                  <h4><%= t ".men" %></h4>
-                  <ul>
-                    <li><%= link_to t(".category"), "#" %></li>
-                  </ul>
-                </div>
-                <div class="col1 me-one">
-                  <h4><%= t ".woman" %></h4>
-                  <ul>
-                    <li><%= link_to t(".category"), "#" %></li>
-                  </ul>
-                </div>
-                <div class="col1 me-one">
-                  <h4><%= t ".kids" %></h4>
-                  <ul>
-                    <li><%= link_to t(".category"), "#" %></li>
-                  </ul>
+        <div class="top-nav">
+          <ul class="memenu skyblue">
+            <li class="grid"><%= link_to t(".home"), root_path %></li>
+            <li class="grid"><%= link_to t(".about"), about_path %></li>
+            <li class="grid"><%= link_to t(".products"), products_path %>
+              <div class="mepanel">
+                <div class="row">
+                  <div class="col1 me-one">
+                    <h4><%= t ".men" %></h4>
+                    <ul>
+                      <li><%= link_to t(".category"), "#" %></li>
+                    </ul>
+                  </div>
+                  <div class="col1 me-one">
+                    <h4><%= t ".woman" %></h4>
+                    <ul>
+                      <li><%= link_to t(".category"), "#" %></li>
+                    </ul>
+                  </div>
+                  <div class="col1 me-one">
+                    <h4><%= t ".kids" %></h4>
+                    <ul>
+                      <li><%= link_to t(".category"), "#" %></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-          <li class="grid"><%= link_to t(".suggests"), "#" %></li>
-        </ul>
+            </li>
+            <li class="grid"><%= link_to t(".suggests"), "#" %></li>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="col-md-3 header-right">
+        <div class="search-bar">
+          <%= form_tag products_path, method: :get do %>
+            <%= text_field_tag :search, params[:search], placeholder: t(".search") %>
+          <% end %>
+        </div>
       </div>
       <div class="clearfix"> </div>
-    </div>
-    <div class="col-md-3 header-right">
-      <div class="search-bar">
-        <input type="text" value= <%= t ".search" %> onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-        <input type="submit" value="">
-      </div>
-    </div>
-    <div class="clearfix"> </div>
     </div>
   </div>
 </div>
