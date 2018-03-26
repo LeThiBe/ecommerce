@@ -1,0 +1,17 @@
+<% @products.each do |p| %>
+  <div class="col-md-3 about-left">
+    <div class="product-main simpleCart_shelfItem">
+      <%= link_to image_tag(p.image), "#", alt: t(".alt"), class: "mask" %>
+      <div class="product-bottom">
+        <h3><%= p.name %></h3>
+        <p><%= t ".explore" %></p>
+        <h4>
+          <%= link_to "#", class: "item_add" do %>
+          <i></i>
+          <% end %>
+          <span class=" item_price">$ <%= p.price %></span>
+        </h4>
+      </div>
+    </div>
+  </div>
+<% end %>

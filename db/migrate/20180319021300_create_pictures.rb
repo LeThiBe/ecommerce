@@ -6,5 +6,6 @@ class CreatePictures < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :pictures, [:product_id, :created_at]
   end
 end

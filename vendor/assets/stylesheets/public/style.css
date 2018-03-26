@@ -612,6 +612,7 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
 
 }
 .product-main {
+    margin-bottom: 30px;
     padding: 1em 0px 2.7em 0px;
     border:1px solid #ECEAEA;
 }
@@ -632,7 +633,7 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
     font-family: "BreeSerif-Regular";
 }
 .product-bottom h4 i {
-    background: url(cart-2.png) no-repeat;
+    background: url(../cart-2.png) no-repeat;
     width: 20px;
     height: 15px;
     display: inline-block;
@@ -640,7 +641,7 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
     vertical-align: middle;
 }
 .product-left:hover .product-bottom h4 i{
-    background: url(cart-3.png) no-repeat;
+    background: url(../cart-3.png) no-repeat;
 }
 .product-bottom {
     text-align: left;
@@ -730,7 +731,7 @@ a.mask {
     font-family: "BreeSerif-Regular";
 }
 .infor-left ul li a span {
-    background: url(s-icons.png) no-repeat;
+    background: url(../s-icons.png) no-repeat;
     width: 34px;
     height: 34px;
     display: inline-block;
@@ -3062,4 +3063,7 @@ ul.tag-men {
 span.glyphicon {
     /* padding: 200px 0px 0px; */
     padding-top: 200px;
+}
+.pag{
+    padding-left: 520px;
 }

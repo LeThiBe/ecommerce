@@ -10,5 +10,6 @@ class CreateSuggests < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :suggests, [:user_id, :created_at]
   end
 end

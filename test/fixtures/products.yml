@@ -2,16 +2,16 @@
 
 one:
   name: MyString
-  category: one
   price: 1.5
   size: MyString
   discount: 1
   description: MyString
+  category: one
 
 two:
   name: MyString
-  category: two
   price: 1.5
   size: MyString
   discount: 1
   description: MyString
+  category: two

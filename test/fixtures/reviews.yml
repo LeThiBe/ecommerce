@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  star: 1
+  conten: MyString
   product: one
   user: one
-  star: 1
-  content: MyString
 
 two:
+  star: 1
+  conten: MyString
   product: two
   user: two
-  star: 1
-  content: MyString

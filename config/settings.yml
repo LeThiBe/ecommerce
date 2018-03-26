@@ -6,3 +6,10 @@ user:
   hour_expired: 2
 session:
   remember_me: "1"
+product:
+  product_max_size: 200
+  pag_max: 12
+  name_max_length: 50
+  desc_max_length: 300
+cart:
+  quantity: 1

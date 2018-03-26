@@ -30,6 +30,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  carts:
+    create:
+      notice: "Cart was successfully created."
+    update:
+      notice1: "Cart was successfully updated."
+    destroy:
+      notice2: "Cart was successfully destroyed."
+      erro: "Can't destroy item"
+  products:
+    show:
+      mess: "Don't find Product"
+    index:
+      title: "All Products"
+    product:
+      explore: "Explore Now"
+      alt: "image product"
   sessions:
     new:
       title: "Login"

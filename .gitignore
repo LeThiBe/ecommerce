@@ -46,13 +46,3 @@ bower.json
 .rubocop.yml
 .rubocop_disabled.yml
 .rubocop_enabled.yml
-Gemfile.lock
-/config/database.yml
-/bin/*
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
-db/schema.rb
-
-app/assets/images/
-vendor/assets/public/
