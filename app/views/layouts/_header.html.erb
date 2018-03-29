@@ -48,24 +48,7 @@
             <li class="grid"><%= link_to t(".products"), products_path %>
               <div class="mepanel">
                 <div class="row">
-                  <div class="col1 me-one">
-                    <h4><%= t ".men" %></h4>
-                    <ul>
-                      <li><%= link_to t(".category"), "#" %></li>
-                    </ul>
-                  </div>
-                  <div class="col1 me-one">
-                    <h4><%= t ".woman" %></h4>
-                    <ul>
-                      <li><%= link_to t(".category"), "#" %></li>
-                    </ul>
-                  </div>
-                  <div class="col1 me-one">
-                    <h4><%= t ".kids" %></h4>
-                    <ul>
-                      <li><%= link_to t(".category"), "#" %></li>
-                    </ul>
-                  </div>
+                  <%= render "categories/menu_cate" %>
                 </div>
               </div>
             </li>

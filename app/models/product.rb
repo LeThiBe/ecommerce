@@ -12,7 +12,7 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: {maximum: Settings.product.desc_max_length}
   validates :image, presence: true
 
-  scope :search_by_name, -> search do
+  scope :search_by_name, ->search do
     where("name LIKE ?", "%#{search}%") if search.present?
   end
 

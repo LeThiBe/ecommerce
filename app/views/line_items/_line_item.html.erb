@@ -1,22 +1,25 @@
-<tbody>
-  <tr>
-    <td data-th="Product">
-      <div class="row">
-        <div class="col-sm-3 hidden-xs"><%= link_to image_tag(line_item.product.image, :size => "100x100"), :size => "10x20", alt: t(".alt") %></div>
-        <div class="col-sm-9">
-          <h4 class="nomargin"><%= line_item.product.name %></h4>
-          <p><%= line_item.product.description %></p>
+<tr>
+  <div>
+    <%= form_for line_item do |f|%>
+      <td data-th="Product">
+        <div class="row">
+          <div class="col-sm-3 hidden-xs"><%= link_to image_tag(line_item.product.image, :size => "100x100"), :size => "10x20", alt: t(".alt") %>
+          </div>
+          <div class="col-sm-9">
+            <h4 class="nomargin"><%= line_item.product.name %></h4>
+            <p><%= line_item.product.description %></p>
+          </div>
         </div>
-      </div>
-    </td>
-    <td data-th="Price"><%= number_to_currency(line_item.product.price) %></td>
-    <td data-th="Quantity">
-      <%= number_field_tag :quantity, line_item.quantity %>
-    </td>
-    <td data-th="Subtotal" class="text-center"><%= number_to_currency(line_item.total_price) %></td>
-    <td class="actions" data-th="">
-      <%= link_to (submit_tag "update",  class: "btn btn-info btn-sm"), line_item_url,:method => :patch %>
-      <%= link_to (submit_tag "delete", class: "btn btn-danger btn-sm"), "#",:method => :patch %>
-    </td>
-  </tr>
-</tbody>
+      </td>
+      <td data-th="Price"><%= number_to_currency(line_item.product.price) %></td>
+      <td data-th="Quantity">
+        <%= f.number_field :quantity, min: 1, max: line_item.product.quantity %>
+      </td>
+      <td data-th="Subtotal" class="text-center"><%= number_to_currency(line_item.total_price) %></td>
+      <td class="actions" data-th="">
+        <%= f.submit %>
+        <%= link_to (submit_tag "delete", class: "btn btn-danger btn-sm"), line_item, method: :delete, data: { confirm: t(".confirm") } %>
+      </td>
+    <% end %>
+  </div>
+</tr>

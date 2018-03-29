@@ -1,7 +1,6 @@
-
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :load_line_item, only: [:update, :destroy]
   # GET /line_items
   # GET /line_items.json
   def index
@@ -14,8 +13,7 @@ class LineItemsController < ApplicationController
   end
 
   # GET /line_items/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /line_items
   # POST /line_items.json
@@ -36,7 +34,7 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     if @line_item.update line_item_params
-      redirect_to line_items_path
+      redirect_to carts_path
     else
       flash[:danger] = t "line_items.update_failed"
     end
@@ -45,16 +43,28 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item = LineItem.find(params[:id])
-    @line_item.destroy
+    if @line_item.destroy
+      flash[:success] = t "line_items.deleted"
+    else
+      flash[:danger] = t "line_items.delete_failed"
+    end
     redirect_to carts_path(@current_cart)
   end
 
+  def load_line_item
+    @line_item = LineItem.find_by id: params[:id]
+    return if @line_item
+    flash[:danger] = t "line_items.not_item"
+    redirect_to products_path
+  end
+
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_line_item
-    @line_item = LineItem.find_by_id(params[:id])
+    @line_item = LineItem.find_by id: params[:id]
   end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def line_item_params
     params.require(:line_item).permit(:quantity)

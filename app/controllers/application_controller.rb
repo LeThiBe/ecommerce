@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :load_all_category
   include SessionsHelper
   include CartsHelper
+
+  def load_all_category
+    @categories = Category.includes(:subcategories)
+  end
 
   private
 

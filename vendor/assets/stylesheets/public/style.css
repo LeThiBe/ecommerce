@@ -810,6 +810,8 @@ a.mask {
 .infor-top {
   border-bottom: 1px solid #DEDEDE;
   padding-bottom: 3em;
+  border-top: 1px solid #DEDEDE;
+  padding-top: 3em;
 }
 /*--information-end--*/
 /*--footer-starts--*/
@@ -1593,7 +1595,7 @@ ul.star-footer li {
 ul.star-footer li i {
   height: 16px;
   width: 16px;
-  background: url("star.png") no-repeat;
+  background: url("../star.png") no-repeat;
   display: inline-block;
 }
 .review {
