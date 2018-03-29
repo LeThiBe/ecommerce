@@ -35,6 +35,7 @@ en:
       thank: "Thank you for your order"
     new:
       empty: "Your cart is empty"
+      choose_pay: "Select a payment method"
   carts:
     create:
       notice: "Cart was successfully created."
@@ -66,6 +67,7 @@ en:
     show:
       mess: "Don't find Product"
       title: "Show Product"
+      reviews: "Reviews"
     index:
       title: "All Products"
     product:
@@ -199,6 +201,21 @@ en:
         num1: "13,500"
         num2: "1,250"
         num3: "1,500"
+    users:
+      index:
+        title: "Users"
+        table_user: "users"
+    products:
+      index:
+        title: "Products"
+        table_product: "products"
+        sure?: "Are you sure?"
+      edit:
+        update: "Update"
+        edit: "Edit"
+        choose_cate: "Select a category"
+      new:
+        add_product: "Add product"
   public:
     404:
       title: "The page you were looking for doesn't exist (404)"

@@ -1,0 +1,64 @@
+<%= form_for(@products, url: yield(:url), :html => {class: "form-horizontal"}) do |f| %>
+  <fieldset>
+    <legend><%= yield(:title) %></legend>
+    <div class="form-group">
+    <div class="col-md-4 control-label"></div>
+    <div class="col-md-4">
+    <%= render "shared/error_messages", object: f.object %>
+    <% if yield(:is_edit?) == "true" %>
+      <div class="edit_form_image">
+        <%= show_image_for @products %>
+      </div>
+    <% end %>
+    </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :image, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.file_field :image  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :name, required: true, class: "form-control input-md", placeholder: "Name", autofocus: true  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :description, required: true, class: "form-control input-md", placeholder: "Description" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.number_field :price, required: true, class: "form-control input-md", placeholder: "Price" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :quantity, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.number_field :quantity, required: true, class: "form-control input-md", placeholder: "Quantity" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :size, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :size, required: true, class: "form-control input-md", placeholder: "Size" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :category_id, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+       <%= f.collection_select :category_id, @categories, :id, :name, {promt: t(".choose_cate")} %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebuttonsubmit"></label>
+      <div class="col-md-4">
+        <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

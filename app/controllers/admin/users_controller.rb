@@ -1,9 +1,8 @@
-# class Admin::UsersController < AdminController
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < AdminController
   layout "admin/application"
 
   def index
-    @users = User.paginate page: params[:page], per_page: Settings.per_page
+    @users = User.paginate page: params[:page], per_page: Settings.user.pag_max
   end
 
   private

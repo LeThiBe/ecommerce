@@ -12,6 +12,10 @@ gem "jquery-datatables-rails"
 gem "ajax-datatables-rails"
 gem "kaminari"
 gem "mini_magick", "4.7.0"
+gem "jquery-datatables-rails"
+gem "ajax-datatables-rails"
+gem "kaminari"
+gem "mini_magick", "4.7.0"
 gem "will_paginate", "3.1.6"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "bootstrap-sass", "3.3.7"
@@ -27,6 +31,11 @@ gem "jbuilder", "2.7.0"
 gem "mysql2"
 gem "config"
 gem "i18n-js"
+
+group :production do
+  gem "pg", "0.18.4"
+  gem "fog", "1.42"
+end
 
 group :development, :test do
   gem "byebug", "9.0.6", platform: :mri

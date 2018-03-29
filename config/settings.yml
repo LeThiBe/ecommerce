@@ -4,6 +4,7 @@ user:
   name_max_length: 50
   password_min_length: 6
   hour_expired: 2
+  pag_max: 10
 session:
   remember_me: "1"
 product:

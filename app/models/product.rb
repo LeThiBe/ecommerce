@@ -6,11 +6,7 @@ class Product < ApplicationRecord
   has_many :order_details, dependent: :destroy
   before_destroy :check_if_has_line_item
 
-  validates :name, presence: true, length: {maximum: Settings.product.name_max_length}
-  validates :size, presence: true
-  validates :price, presence: true
-  validates :description, presence: true, length: {maximum: Settings.product.desc_max_length}
-  validates :image, presence: true
+  mount_uploader :image, PictureUploader
 
   scope :search_by_name, ->search do
     where("name LIKE ?", "%#{search}%") if search.present?

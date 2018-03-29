@@ -102,8 +102,7 @@ body a{
   margin: 5px 20px 5px 20px ;
 }
 .item_add {
-  color: #fff;
-  border:none;
+  padding-top: 30px;
 }
 .grid_1 img{
   margin-bottom:1em;
@@ -476,7 +475,7 @@ ul.callbacks_tabs.callbacks2_tabs {
   padding: 5em 0px 4em 0px;
 }
 .about-left img{
-  width:100%;
+  margin: 0 auto;
 }
 .about-left figure {
   position: relative;
@@ -615,6 +614,7 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
   margin-bottom: 30px;
   padding: 1em 0px 2.7em 0px;
   border:1px solid #ECEAEA;
+  text-align: center;
 }
 .product {
   padding: 3em 0px 6em 0px;
@@ -670,7 +670,8 @@ a.mask {
   text-decoration: none;
   overflow: hidden;
   display: block;
-  padding: 12px 0px;
+  height: 224px;
+  padding: 12px 0;
 }
 .product-left:hover .product-bottom h3{
   color:#73B6E1;
@@ -3056,8 +3057,8 @@ span.glyphicon {
   /* padding: 200px 0px 0px; */
   padding-top: 200px;
 }
-.pag{
-  padding-left: 520px;
+.pag {
+  text-align: center;
 }
 
 .cart_title {

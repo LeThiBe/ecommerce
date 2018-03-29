@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title yield(:title) %></title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
-    <%= render "layouts/admin/shim" %>
-  </head>
-  <body class= "admin">
-    <section id="container">
+<head>
+  <title><%= full_title yield(:title) %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
+  <%= render "layouts/admin/shim" %>
+</head>
+<body class= "admin">
+  <section id="container">
     <%= render "layouts/admin/header" %>
     <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
-    <div id="sidebar" class="nav-collapse">
-  <!-- sidebar menu start-->
-  <div class="leftside-navigation">
-    <ul class="sidebar-menu" id="nav-accordion">
-      <li>
-        <%= link_to t(".dashboard"), "#" %>
-      </li>
-      <li>
-        <%= link_to t(".users"), "#" %>
-      </li>
-      <li>
-        <%= link_to t(".categories"), "#" %>
-      </li>
-      <li class="sub-menu">
-        <%= link_to t(".products"), "#" %>
-      </li>
-      <li>
-        <%= link_to t(".pays"), "#" %>
-      </li>
-      <li>
-        <%= link_to t(".oders"), "#" %>
-      </li>
-      <li class="sub-menu">
-        <%= link_to t(".request"), "#" %>
-      </li>
-    </ul>
-  </div>
-  <!-- sidebar menu end-->
-</div>
-    <%= yield %>
-    <%= render "layouts/admin/footer" %>
+    <aside>
+      <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+          <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+              <%= link_to t(".dashboard"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".users"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".categories"), "#" %>
+            </li>
+            <li class="sub-menu">
+              <%= link_to t(".products"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".pays"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".oders"), "#" %>
+            </li>
+            <li class="sub-menu">
+              <%= link_to t(".request"), "#" %>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <section id="main-content">
+      <section class="wrapper">
+        <%= yield %>
+      </section>
+        <%= render "layouts/admin/footer" %>
     </section>
-  </body>
+  </section>
+</body>
 </html>

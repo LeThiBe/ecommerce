@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :users, except: [:show, :new, :create]
+    resources :products, except: :show
   end
 end
