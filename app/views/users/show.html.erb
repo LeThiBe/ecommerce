@@ -1,23 +1,44 @@
-<% provide :title, @user.name %>
-<div class="row">
-<div class="col-md-2"></div>
-  <aside class="col-md-2">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-6">
-    <h4><%= t ".name" %></h4>
-    <%= @user.name %>
-    <h4><%= t ".email" %></h4>
-    <%= @user.email %>
-    <h4><%= t ".phone" %></h4>
-    <%= @user.phone %>
-    <h4><%= t ".address" %></h4>
-    <%= @user.address %>
+<% provide(:title, @user.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @user.name %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center">
+              <div>
+                <%= gravatar_for @user %>
+              </div>
+            </div>
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td><i class="glyphicon glyphicon-map-marker"></i><%= t ".address" %></td>
+                    <td><%= @user.address %> </td>
+                  </tr>
+                  <tr>
+                    <td><i class="glyphicon glyphicon-envelope"></i><%= t ".email" %></td>
+                    <td><%= @user.email %></td>
+                  </tr>
+                  <tr>
+                    <td><i class="glyphicon glyphicon-phone"></i><%= t ".phone_num" %></td>
+                    <td><%= @user.phone %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <% if current_user?(@user) || @current_user.admin? %>
+            <%= link_to t("update_profile"), edit_user_path(@user) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="clearfix"></div>
 </div>

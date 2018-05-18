@@ -1,0 +1,69 @@
+<% provide :title, t(".title") %>
+<%= render "shared/navbar" %>
+<!--end-breadcrumbs-->
+<!--start-single-->
+<div class="single contact">
+  <div class="container">
+    <div class="single-main">
+      <div class="col-md-9 single-main-left">
+        <div class="sngl-top">
+          <div class="col-md-5 single-top-left">
+            <div class="flexslider">
+              <ul class="slides">
+                <li data-thumb="">
+                 <%= link_to image_tag(@products.image), :data => { :imagezoom => "true" }, class: "img-responsive", alt: t(".alt") %>
+               </li>
+             </ul>
+           </div>
+           <!-- FlexSlider -->
+           <script src="js/imagezoom.js"></script>
+           <script defer src="js/jquery.flexslider.js"></script>
+           <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+           <script>
+            // Can also be used with $(document).ready()
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+              });
+            });
+          </script>
+        </div>
+        <div class="col-md-7 single-top-right">
+          <div class="single-para simpleCart_shelfItem">
+            <h2><%= @products.name %></h2>
+            <div class="star-on">
+              <ul class="star-footer">
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+              </ul>
+              <div class="review">
+                <a href="#"> 1 customer review </a>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <h5><%= number_to_currency(@products.price) %></h5>
+            <p><%= @products.description %></h2></p>
+            <ul class="tag-men">
+              <li><span>TAG: </span>
+                <span class="women1"><%= @products.category.name %></h2>,</span></li>
+              </ul>
+              <a href="#" class="add-cart item_add">ADD TO CART</a>
+
+            </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="tabs">
+          <ul class="menu_drop">
+            <li class="item1"><a href="#"><%= image_tag image_url("arrow.png"), alt: "" %>Reviews</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
