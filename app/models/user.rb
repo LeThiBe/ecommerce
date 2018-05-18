@@ -4,8 +4,10 @@ class User < ApplicationRecord
   has_many :suggests, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :order_products, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
+
   validates :email, presence: true, length: {maximum: Settings.user.email_max_length},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :name, presence: true, length: {maximum: Settings.user.name_max_length}

@@ -1,6 +1,6 @@
 User.create!(name:  "Be", email: "be@gmail.com",
   password: "123456", password_confirmation: "123456",
-  is_admin: false, activated: true, phone: "0123456789", address: "Da Nang", point: 0)
+  is_admin: true, activated: true, phone: "0123456789", address: "Da Nang", point: 0)
 
 9.times do |n|
   name  = Faker::Name.name
@@ -10,7 +10,7 @@ User.create!(name:  "Be", email: "be@gmail.com",
     is_admin: false, activated: true, phone: "0123456789", address: "Da Nang", point: 0)
 end
 
-Category.create!(name: "Men")
+Category.create!(name: "Men", parent_id: "")
 Category.create!(name: "Women")
 Category.create!(name: "Kids")
 
@@ -29,7 +29,7 @@ cat = Category.order(:created_at).take(5)
   name  = Faker::Name.name
   description = Faker::Lorem.sentence(5)
   image = "https://thingsremembered.scene7.com/is/image/ThingsRemembered/000347328?wid=1500"
-  cat.each { |category| category.products.create!(name: name, price: "350", size: "30mm", discount: "0", description: description, image: image) }
+  cat.each { |category| category.products.create!(name: name, price: "350", size: "30mm", discount: "0", description: description, image: image, quantity: "3") }
 end
 
 products_id = Product.all.pluck(:id)

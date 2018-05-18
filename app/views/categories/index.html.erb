@@ -1,0 +1,9 @@
+<% @categories.each do |category| %>
+  <ul>
+    <% if category.parent_id.blank? %>
+      <li><%= category.name %>
+        <%= render partial: "subcategory", locals: {subcategories: category.subcategories} if category.subcategories.present? %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

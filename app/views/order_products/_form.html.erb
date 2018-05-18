@@ -1,0 +1,41 @@
+<%= form_for(@order, :html => {class: "form-horizontal"}) do |f| %>
+  <fieldset>
+    <legend>Order</legend>
+    <div class="form-group">
+      <%= f.label :name, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :name, value: @user.name, required: true, class: "form-control input-md", placeholder: "Full Name", autofocus: true  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :email, value: @user.email, required: true, class: "form-control input-md", placeholder: "Email" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :address, value: @user.address, required: true, class: "form-control input-md", placeholder: "Address" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.text_field :phone, value: @user.phone, required: true, class: "form-control input-md", placeholder: "Phone" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :pay_method, class: "col-md-4 control-label", for: "textinput" %>
+      <div class="col-md-4">
+        <%= f.select :pay_method, OrderProduct::PAY_METHODS, :prompt => 'Select a payment method' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebuttonsubmit"></label>
+      <div class="col-md-4">
+        <%= f.submit %>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

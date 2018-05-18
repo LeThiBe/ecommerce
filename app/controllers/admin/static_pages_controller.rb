@@ -1,3 +1,3 @@
-class Admin::StaticPagesController < ApplicationController
-  layout "admin/application"
+class Admin::StaticPagesController < AdminController
+  def home; end
 end

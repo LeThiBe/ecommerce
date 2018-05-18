@@ -30,6 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  order_products:
+    create:
+      thank: "Thank you for your order"
+    new:
+      empty: "Your cart is empty"
   carts:
     create:
       notice: "Cart was successfully created."
@@ -38,9 +43,29 @@ en:
     destroy:
       notice2: "Cart was successfully destroyed."
       erro: "Can't destroy item"
+    cart:
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total "
+      subtotal: "Subtotal"
+      checkout: "Checkout"
+      empty: "Empty cart"
+      confirm: "Are you sure?"
+      continue: "Continue Shopping"
+  line_items:
+    create:
+      create_success: "Added item to cart"
+      create_failed: "Can not add item to cart"
+    line_item:
+     confirm: "Are you sure?"
+  model:
+    product:
+      error: "This product has a LineItem"
   products:
     show:
       mess: "Don't find Product"
+      title: "Show Product"
     index:
       title: "All Products"
     product:
@@ -134,6 +159,7 @@ en:
       profile: "Profile"
       hi: "Hi, %{name}!"
       logout: "Logout"
+      confirm: "Are you sure?"
     footer:
       follow: "Follow Us"
       info: "Information"
