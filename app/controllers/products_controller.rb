@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.find_by id: params[:id]
-    return if @products
+    @product = Product.find_by id: params[:id]
+    return if @product
     flash[:danger] = t("products.show.mess")
     redirect_to root_url
   end

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
   <head>
     <title><%= full_title yield(:title) %></title>
     <%= csrf_meta_tags %>
@@ -9,66 +8,13 @@
     <%= render "layouts/admin/shim" %>
   </head>
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-=======
-<head>
-  <title><%= full_title yield(:title) %></title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload" %>
-  <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
-  <%= render "layouts/admin/shim" %>
-</head>
-<body class= "admin">
-  <section id="container">
->>>>>>> finish manager table
     <%= render "layouts/admin/header" %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
     <div class="content-wrapper">
       <%= yield %>
       <%= render "layouts/admin/footer" %>
     </div>
   </body>
-=======
-    <aside>
-      <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-          <ul class="sidebar-menu" id="nav-accordion">
-            <li>
-              <%= link_to t(".dashboard"), "#" %>
-            </li>
-            <li>
-              <%= link_to t(".users"), "#" %>
-            </li>
-            <li>
-              <%= link_to t(".categories"), "#" %>
-            </li>
-            <li class="sub-menu">
-              <%= link_to t(".products"), "#" %>
-            </li>
-            <li>
-              <%= link_to t(".pays"), "#" %>
-            </li>
-            <li>
-              <%= link_to t(".oders"), "#" %>
-            </li>
-            <li class="sub-menu">
-              <%= link_to t(".request"), "#" %>
-            </li>
-          </ul>
-        </div>
-        <!-- sidebar menu end-->
-      </div>
-    </aside>
-    <section id="main-content">
-      <section class="wrapper">
-        <%= yield %>
-      </section>
-        <%= render "layouts/admin/footer" %>
-    </section>
-  </section>
-</body>
->>>>>>> finish manager table
 </html>

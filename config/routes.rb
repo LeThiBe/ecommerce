@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -27,7 +29,10 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :categories
   resources :account_activations, only: :edit
-  resources :products
+  resources :products do
+    resources :reviews
+  end
+
   namespace :admin do
     root "users#index"
     resources :users, except: :show

@@ -4,7 +4,8 @@ class Product < ApplicationRecord
   has_many :pictures, dependent: :destroy
   has_many :reviews, dependent: :destroy
   before_destroy :check_if_has_line_item
-
+  ratyrate_rateable "quality"
+  # , "original_score"
   mount_uploader :image, PictureUploader
 
   scope :search_by_name, lambda{|search|

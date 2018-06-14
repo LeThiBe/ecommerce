@@ -27,6 +27,7 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "2.7.0"
 gem "mysql2", "0.4.10"
+gem "ratyrate"
 gem "config"
 gem "i18n-js"
 

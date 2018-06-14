@@ -307,7 +307,6 @@ your password will stay as it is."
         search: "Search"
         title: "Products"
         table_product: "products"
-        sure?: "Are you sure?"
       edit:
         update: "Update"
         edit: "Edit"

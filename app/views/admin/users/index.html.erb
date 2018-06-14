@@ -1,5 +1,4 @@
 <% provide :title, t(".title") %>
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
 <% provide :table, t(".table_user") %>
 <% provide :add, t(".add_user") %>
 
@@ -39,62 +38,3 @@
     </div>
   </div>
 </div>
-
-=======
-
-<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= t ".table_user" %>
-    </div>
-   <div>
-    <table class="table" ui-jq="footable" ui-options='{
-        "paging": {
-        "enabled": true
-      },
-      "filtering": {
-      "enabled": true
-      },
-      "sorting": {
-      "enabled": true
-      }}'>
-      <thead>
-        <tr>
-          <th><%= t "view.admin.users.index.table_th.id" %></th>
-          <th><%= t "view.admin.users.index.table_th.name" %></th>
-          <th><%= t "view.admin.users.index.table_th.email" %></th>
-          <th><%= t "view.admin.users.index.table_th.address" %></th>
-          <th><%= t "view.admin.users.index.table_th.phone" %></th>
-          <th><%= t "view.edit" %></th>
-          <th><%= t "view.delete" %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |u| %>
-        <tr>
-          <td><%= u.id %></td>
-          <td><%= u.name %></td>
-          <td><%= u.email %></td>
-          <td><%= u.address %></td>
-          <td><%= u.phone %></td>
-          <td><%= link_to t("view.edit"),
-            edit_admin_user_path(u), class: "btn btn-success"%>
-          </td>
-          <td>
-          <%= link_to t("view.delete"),
-            [:admin, u], method: :delete, class: "btn btn-danger",
-            data: {confirm: t("view.sure?")} %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    </div>
-  </div>
-
-<div class="pag">
-  <%= will_paginate %>
-  </div>
-
-</div>
->>>>>>> finish manager table

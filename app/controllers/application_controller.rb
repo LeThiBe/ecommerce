@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_all_category
+
   include SessionsHelper
   include ProductsHelper
   include CartsHelper

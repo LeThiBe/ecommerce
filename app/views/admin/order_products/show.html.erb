@@ -18,17 +18,23 @@
             <%= render partial: "detail", collection: @line_items, as: :item %>
           </tbody>
         </table>
-        <h5><%= t ".order_number" %><%= @order.id %></h5>
-        <h5><%= t ".order_status" %><%= @order.status %></h5>
-        <%= form_for @order, url: admin_order_product_path do |f| %>
-          <% if @order.in_progress? %>
-            <div><%= f.hidden_field :status, value: "approved" %>
-            <%= f.submit %>
-          <% else %>
-            <%= button_tag t(".accepted"), type: :button, class: "btn btn-primary", disabled: true %>
+        <h5><%= t ".order_number" %>:&ensp;<%= @order.id %></h5>
+        <h5><%= t ".order_status" %>:&ensp;<%= @order.status %></h5>
+        <% if @order.status == "in_progress" %>
+          <%= form_tag admin_order_product_path(@order), method: :put, class: "ship-reject-form" do %>
+            <%= hidden_field_tag :status, "approved" %>
+            <%= submit_tag "accept", class: "btn btn-success" %>
           <% end %>
+          <%= form_tag admin_order_product_path(@order), method: :put,
+            class: "ship-reject-form" do %>
+            <%= hidden_field_tag :status, "cancelled" %>
+            <%= submit_tag "cancel", class: "btn btn-danger" %>
+          <% end %>
+        <% else %>
+          <%= button_tag t(".cancel_order"), type: :button, class: "btn btn-primary", disabled: true %>
+          <%= button_tag t(".accept"), type: :button, class: "btn btn-primary", disabled: true %>
         <% end %>
-    </div>
+      </div>
     </div>
   </div>
 </div>

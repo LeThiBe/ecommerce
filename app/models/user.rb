@@ -2,10 +2,15 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :activation_token, :remember_token, :reset_token
   has_many :reviews, dependent: :destroy
-  has_many :orders, dependent: :destroy
   has_many :order_products, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
+  ratyrate_rater
+  mount_uploader :image, AvatarUploader
+
+  scope :search_by_name, lambda{|search|
+    where("name LIKE ?", "%#{search}%") if search.present?
+  }
 
   mount_uploader :image, AvatarUploader
 

@@ -20,13 +20,26 @@ class Admin::OrderProductsController < AdminController
   end
 
   def update
-    if @order.update order_params
-      update_quantity_product
-      flash[:success] = t ".update_order"
-    else
-      flash[:danger] = t "update_error"
+    case params[:status]
+    when "approved"
+      if @order.approved!
+        update_quantity_product
+        flash[:success] = t ".update_order"
+        redirect_to admin_order_product_path
+      else
+        flash[:danger] = t "update_error"
+        redirect_to admin_order_product_path
+      end
+    when "cancelled"
+      if @order.cancelled!
+        update_quantity_product
+        flash[:success] = t ".update_order"
+        redirect_to admin_order_product_path
+      else
+        flash[:danger] = t "update_error"
+        redirect_to admin_order_product_path
+      end
     end
-    redirect_to admin_order_product_path
   end
 
   def destroy

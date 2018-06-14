@@ -1,10 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
   before_action :load_line_item, only: [:show, :update, :destroy]
-=======
-  before_action :load_line_item, only: [:update, :destroy]
->>>>>>> finish manager table
   # GET /line_items
   # GET /line_items.json
   def index
@@ -18,11 +14,8 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1/edit
   def edit; end
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
 
   def show; end
-=======
->>>>>>> finish manager table
 
   # POST /line_items
   # POST /line_items.json
@@ -43,11 +36,7 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     if @line_item.update line_item_params
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
       redirect_to cart_path(current_cart)
-=======
-      redirect_to carts_path
->>>>>>> finish manager table
     else
       flash[:danger] = t "line_items.update_failed"
     end
@@ -61,18 +50,7 @@ class LineItemsController < ApplicationController
     else
       flash[:danger] = t "line_items.delete_failed"
     end
-<<<<<<< f54655364e746c5060c571d24ff0f2b94c5c5b86
-    redirect_to products_path
-  end
-
-  def load_line_item
-    @line_item = LineItem.find_by id: params[:id]
-    return if @line_item
-    flash[:danger] = t "line_items.not_item"
-    redirect_to products_path
-=======
     redirect_to carts_path(@current_cart)
->>>>>>> finish manager table
   end
 
   def load_line_item
