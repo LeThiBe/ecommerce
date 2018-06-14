@@ -153,13 +153,6 @@ background: #efe;
   margin: 0.5em 0;
 }
 
-
-
-
-
-
-
-
 .table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
 }
@@ -187,8 +180,6 @@ background: #efe;
     content: attr(data-th); font-weight: bold;
     display: inline-block; width: 8rem;
   }
-
-
 
   table#cart tfoot td{display:block; }
   table#cart tfoot td .btn{display:block;}

@@ -2,5 +2,10 @@
 <% provide(:button_text, t(".update")) %>
 <% provide(:is_edit?, "true") %>
 <% provide(:url, admin_product_path) %>
-
-<%= render "form" %>
+<div class="container-fluid">
+  <div class="content">
+    <section class="wrapper">
+      <%= render "form" %>
+    </section>
+  </div>
+</div>

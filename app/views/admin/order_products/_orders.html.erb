@@ -1,0 +1,20 @@
+<tr class="row_custom">
+  <td class="cell_custom"><%= order.id %></td>
+  <td class="cell_custom"><%= order.name %></td>
+  <td class="cell_custom"><%= order.address %></td>
+  <td class="cell_custom"><%= order.email %></td>
+  <td class="cell_custom"><%= order.phone %></td>
+  <td class="cell_custom"><%= order.created_at %></td>
+  <td class="cell_custom"><%= number_to_currency(order.total_price_all) %></td>
+  <td class="text_<%= order.status %>">
+    <%= order.status %></td>
+  <td>
+  <%= link_to(admin_order_product_path(order)) do %>
+    <i class="fa fa-fw fa-eye"></i>
+  <% end %>
+  <%= link_to(admin_order_product_path(order), method: :delete, class: "btn btn-danger",
+      data: {confirm: t("sure?")}) do %>
+    <i class="fa fa-fw fa-trash"></i>
+  <% end %>
+  </td>
+</tr>

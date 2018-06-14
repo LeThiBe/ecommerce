@@ -30,12 +30,44 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  sure?: "Are you sure?"
+  update: "Update"
+  edit: "Edit"
+  password_resets:
+    new:
+      title: "Forgot password"
+      submit: "Submit"
+    create:
+      messages: "Email sent with password reset instructions"
+      not_found: "Email address not found"
+    edit:
+      title: "Reset password"
+      confirmation: "Confirmation"
+      submit: "Update password"
+    update:
+      error: "can't be empty"
+      success: "Password has been reset."
+    check_expiration:
+      expired: "Password reset has expired."
+  categories:
+    show:
+      title: "Product by category"
   order_products:
+    show:
+      order_number: "Order number: "
+      order_status: "Order status: "
     create:
       thank: "Thank you for your order"
     new:
       empty: "Your cart is empty"
       choose_pay: "Select a payment method"
+    update:
+      cancel_order: "Order was successfully cancelled"
+      cancel_order_error: "Can't cancel order"
+    load_order:
+      not_found_order: "Can't find order"
+    load_product:
+      not_found_product: "Can't find product"
   carts:
     create:
       notice: "Cart was successfully created."
@@ -55,11 +87,14 @@ en:
       confirm: "Are you sure?"
       continue: "Continue Shopping"
   line_items:
+    deleted: "Product was deleted!"
     create:
       create_success: "Added item to cart"
       create_failed: "Can not add item to cart"
     line_item:
      confirm: "Are you sure?"
+     update_quantity: "Update quantity"
+     delete: "Delete"
   model:
     product:
       error: "This product has a LineItem"
@@ -96,6 +131,18 @@ en:
       content: "Welcome to the Luxury Watchs! Click on the link below to activate your account:"
       title: "Luxury Watchs"
       active: "Activate"
+    password_reset_text:
+      content1: "To reset your password click the link below:"
+      content2: "This link will expire in two hours."
+      content3: "If you did not request your password to be reset, please ignore this email and
+                 your password will stay as it is."
+    password_reset:
+      h1: "Password reset"
+      content_p1: "To reset your password click the link below:"
+      title_url: "Reset password"
+      content_p2: "This link will expire in two hours."
+      content_p3: "If you did not request your password to be reset, please ignore this email and
+your password will stay as it is."
   account_activations:
     edit:
       activated: "Account activated!"
@@ -107,6 +154,8 @@ en:
     navbar:
       home: "Home"
   users:
+    logged_in_user:
+      pl_login: "Please login"
     show:
       name: "Name:"
       email: "Email:"
@@ -126,6 +175,9 @@ en:
       title: "Register"
       register: "REGISTER"
       btn_signup: "Submit"
+    edit:
+      edit_user: "Edit User"
+      save: "Save"
   custom:
     append:
       before: "<li>before event fired.</li>"
@@ -133,8 +185,12 @@ en:
   layouts:
     admin:
       header:
+        your_order: "Your order"
         logo: "ADMINS"
         search: " Search"
+        products: "Products manage"
+        categories: "Categories manage"
+        users: "Users manage"
         user: "User"
         profile: "Profile"
         settings: "Settings"
@@ -148,6 +204,7 @@ en:
       title: "Luxury Watch"
       login: "LOGIN"
       register: "REGISTER"
+      admin_page: "ADMIN PAGE"
       empty_cart: "Empty Cart"
       home: "Home"
       products: "Products"
@@ -157,7 +214,7 @@ en:
       kids: "Kids"
       casio: "Casio"
       search: "Search"
-      suggests: "Suggests"
+      contact: "Contact"
       profile: "Profile"
       hi: "Hi, %{name}!"
       logout: "Logout"
@@ -167,8 +224,8 @@ en:
       info: "Information"
       account: "My Account"
       store: "Store Information"
-      num: "+955 123 4567"
-      email: "contact@example.com"
+      num: "+841656453206"
+      email: "15i1lethibe@gmail.com"
       enter: Enter Your Email"
       sub: "Subscribe"
       foot: "© 2018 Luxury Watches. All Rights Reserved "
@@ -188,6 +245,32 @@ en:
     about:
       about: "#About Page..."
   admin:
+    order_products:
+      index:
+        title: "List of orders"
+        search: "Search"
+        list_order: "List of orders"
+      update:
+        update_order: "Order was successfully updated."
+        update_error: "Can't update order"
+    categories:
+      index:
+        search: "Search"
+        title: "Categories"
+        table_cate: "Categories"
+        add_cate: "Add categories"
+      new:
+        create: "Create"
+        add_cate: "Add categories"
+      create:
+        add_success: "Category was successfully added."
+      update:
+        updated: "Category was successfully updated."
+      destroy:
+        destroy_success: "Category was successfully destroyed."
+        destroy_fail: "Can't destroy"
+        destroy_fail_because_of_sub: "This Category has sub-category, can not be destroyed"
+        cant_find_category: "Category can not be found"
     static_pages:
       home:
         dashboard: "Dashboard"
@@ -203,19 +286,41 @@ en:
         num3: "1,500"
     users:
       index:
+        search: "Search"
         title: "Users"
         table_user: "users"
+      edit:
+        update: "Update"
+        edit: "Edit"
+      new:
+        add_user: "Add users"
+      create:
+        add_success: "User was successfully added."
+      destroy:
+        destroy_success: "User was successfully destroyed."
+        destroy_fail: "Can't destroy"
+        cant_find_product: "Product can not be found"
+      update:
+        updated: "Product was successfully updated."
     products:
       index:
+        search: "Search"
         title: "Products"
         table_product: "products"
-        sure?: "Are you sure?"
       edit:
         update: "Update"
         edit: "Edit"
         choose_cate: "Select a category"
       new:
         add_product: "Add product"
+      create:
+        add_success: "Product was successfully added."
+      destroy:
+        success: "Product was successfully destroyed."
+        destroy_fail: "Can't destroy"
+        cant_find_product: "Product can not be found"
+      update:
+        updated: "Product was successfully updated."
   public:
     404:
       title: "The page you were looking for doesn't exist (404)"

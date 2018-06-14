@@ -9,23 +9,23 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-3 col-lg-3 " align="center">
-              <div>
-                <%= gravatar_for @user %>
+              <div class="img_profile">
+                <%= image_tag(@user.image) %>
               </div>
             </div>
             <div class=" col-md-9 col-lg-9 ">
               <table class="table table-user-information">
                 <tbody>
                   <tr>
-                    <td><i class="glyphicon glyphicon-map-marker"></i><%= t ".address" %></td>
+                    <td><i class="fa fa-map-marker"></i>&ensp;<%= t ".address" %></td>
                     <td><%= @user.address %> </td>
                   </tr>
                   <tr>
-                    <td><i class="glyphicon glyphicon-envelope"></i><%= t ".email" %></td>
+                    <td><i class="fa fa-envelope"></i>&ensp;<%= t ".email" %></td>
                     <td><%= @user.email %></td>
                   </tr>
                   <tr>
-                    <td><i class="glyphicon glyphicon-phone"></i><%= t ".phone_num" %></td>
+                    <td><i class="fa fa-phone"></i>&ensp;<%= t ".phone_num" %></td>
                     <td><%= @user.phone %></td>
                   </tr>
                 </tbody>

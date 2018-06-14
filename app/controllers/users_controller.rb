@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :load_user, except: %i(new create)
+
   def show
-    @user = User.find_by id: params[:id]
     @user || render(file: "public/404.html", status: 404, layout: true)
   end
 
@@ -17,6 +18,24 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = t ".updated"
+      redirect_to user_path
+    else
+      render :edit
+    end
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "cant_find_user"
+    redirect_to root_url
   end
 
   private

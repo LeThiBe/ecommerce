@@ -1813,9 +1813,6 @@ h3.ghj {
 .typo-bottom{
   margin-top:3%;
 }
-.table tr th {
-  width: 50%;
-}
 /*--end-typo--*/
 /*--starts-register--*/
 .account-left ul{
@@ -3072,4 +3069,35 @@ span.glyphicon {
 .total_line .total_cell {
   font-weight: bold;
   border-top: 1px solid #595;
+}
+
+.order {
+  margin-left: 70%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.text_in_progress {
+  color: green;
+}
+
+.text_approved {
+  color: blue;
+}
+
+.text_cancelled {
+  color: red;
+}
+
+.order_product {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.img_profile img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }

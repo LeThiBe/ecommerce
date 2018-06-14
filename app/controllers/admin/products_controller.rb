@@ -17,7 +17,8 @@ class Admin::ProductsController < AdminController
   end
 
   def index
-    @products = Product.paginate page: params[:page], per_page: Settings.product.pag_max
+    @products = Product.search_by_name(params[:search]).paginate(page: params[:page],
+      per_page: Settings.pag_max)
     @category = Category.find_by id: params[:category_id]
   end
 
@@ -25,7 +26,7 @@ class Admin::ProductsController < AdminController
 
   def update
     if @products.update_attributes(product_params)
-      flash[:success] = t "updated"
+      flash[:success] = t ".updated"
       redirect_to admin_products_path
     else
       render :edit
@@ -34,9 +35,9 @@ class Admin::ProductsController < AdminController
 
   def destroy
     if @products.destroy
-      flash[:success] = t "success"
+      flash[:success] = t ".success"
     else
-      flash[:danger] = t "destroy_fail"
+      flash[:danger] = t ".destroy_fail"
     end
     redirect_to admin_products_path
   end

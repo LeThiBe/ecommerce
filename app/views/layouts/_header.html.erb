@@ -4,20 +4,24 @@
     <div class="top-header-main">
       <div class="col-md-6 top-header-left">
         <% if logged_in? %>
-        <span class="label head"><%= t ".hi", name: current_user.name %></span>&nbsp;|
-        <%= link_to t(".profile"), current_user, class: "label head" %>&nbsp;|
-        <%= link_to t(".logout"), logout_path, method: :delete, class: "label head" %>
-        <% else %>
-        <%= link_to t(".login"), login_path, class: "label head" %>&nbsp;|
-        <%= link_to t(".register"), register_path, class: "label head" %>
+          <span class="label head"><%= t ".hi", name: current_user.name %></span>&nbsp;|
+          <%= link_to t(".profile"), current_user, class: "label head" %>&nbsp;|
+          <%= link_to t(".logout"), logout_path, method: :delete, class: "label head" %>
+          <% if current_user.is_admin? && !current_user?(@user) %>
+            <%= link_to t(".admin_page"), admin_root_path, class: "label head" %>
+          <% end %>
+          <% else %>
+            <%= link_to t(".login"), login_path, class: "label head" %>&nbsp;|
+            <%= link_to t(".register"), register_path, class: "label head" %>
         <% end %>
       </div>
       <div class="col-md-6 top-header-right">
+        <%= link_to t(".your_order"), order_products_path, class: "label order" %>
         <div class="cart box_1">
           <a href="javascript:;">
-            <div class="total">
+            <!-- <div class="total">
               <span class="simpleCart_total"></span>
-            </div>
+            </div> -->
             <%= link_to image_tag("cart-1.png"), current_cart, alt: "cart" %>
           </a>
           <p><%= link_to t(".empty_cart"), @cart, :method => :delete, data: {:confirm => t(".confirm") }, class: "simpleCart_empty" %></p>
@@ -43,8 +47,7 @@
       <div class="col-md-9 header-left">
         <div class="top-nav">
           <ul class="memenu skyblue">
-            <li class="grid"><%= link_to t(".home"), root_path %></li>
-            <li class="grid"><%= link_to t(".about"), about_path %></li>
+            <li class="active"><%= link_to t(".home"), root_path %></li>
             <li class="grid"><%= link_to t(".products"), products_path %>
               <div class="mepanel">
                 <div class="row">
@@ -52,7 +55,6 @@
                 </div>
               </div>
             </li>
-            <li class="grid"><%= link_to t(".suggests"), "#" %></li>
           </ul>
         </div>
         <div class="clearfix"> </div>

@@ -1,0 +1,13 @@
+<tr class="row_custom">
+    <td class="cell_custom"><%= category.id %></td>
+    <td class="cell_custom"><%= category.name %></td>
+    <td class="cell_custom"><%= display_cate_name_by(category.parent_id) %></td>
+    <td>
+      <%= link_to t("view.edit"),
+       edit_admin_category_path(category), class: "btn btn-success"%>
+      <%= link_to t("view.delete"),
+        [:admin, category], method: :delete, class: "btn btn-danger",
+        data: {confirm: t("sure?")} %>
+    </td>
+</tr>
+
