@@ -1,0 +1,16 @@
+ <% @users.each do |u| %>
+   <tr class="row_custom">
+    <td class="cell_custom"><%= u.id %></td>
+    <td class="cell_custom"><%= image_tag(u.image) %></td>
+    <td class="cell_custom"><%= u.name %></td>
+    <td class="cell_custom"><%= u.email %></td>
+    <td class="cell_custom"><%= u.address %></td>
+    <td class="cell_custom"><%= u.phone %></td>
+    <td>
+      <%= link_to t("view.edit"),
+        edit_admin_user_path(u), class: "btn btn-success"%>
+      <%= link_to t("view.delete"),
+        [:admin, u], method: :delete, class: "btn btn-danger",data: {confirm: t("sure?")} %>
+    </td>
+  </tr>
+<% end %>

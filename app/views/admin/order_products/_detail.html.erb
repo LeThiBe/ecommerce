@@ -1,0 +1,8 @@
+<tr class="row_custom">
+  <td class="cell_custom"><%= item.id %></td>
+  <td class="cell_custom"><%= image_tag(item.product.image) %></td>
+  <td class="cell_custom"><%= link_to item.product.name, item.product %></td>
+  <td class="cell_custom"><%= item.quantity %></td>
+  <td class="cell_custom"><%= number_to_currency(item.product.price) %></td>
+  <td class="cell_custom"><%= number_to_currency(item.total_price) %></td>
+</tr>

@@ -17,8 +17,10 @@
       </td>
       <td data-th="Subtotal" class="text-center"><%= number_to_currency(line_item.total_price) %></td>
       <td class="actions" data-th="">
-        <%= f.submit %>
-        <%= link_to (submit_tag "delete", class: "btn btn-danger btn-sm"), line_item, method: :delete, data: { confirm: t(".confirm") } %>
+        <%= link_to (submit_tag t(".update_quantity"), class: "btn btn-success btn-block"), line_item %>
+      </td>
+      <td>
+       <%= link_to (submit_tag t(".delete"), class: "btn btn-danger btn-sm"), line_item, method: :delete, data: { confirm: t(".confirm") } %>
       </td>
     <% end %>
   </div>

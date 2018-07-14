@@ -1,0 +1,37 @@
+<% provide :title, t(".title") %>
+<% provide :table, t(".table_cate") %>
+<% provide :add, t(".add_cate") %>
+
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header"><i class="fa fa-table"></i> <%= yield(:table) %></div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <div class="add_pd">
+          <%= link_to yield(:add), new_admin_category_path, class: "btn btn-primary" %>
+          <div class="search-bar">
+            <%= form_tag admin_categories_path, method: :get do %>
+              <%= text_field_tag :search, params[:search], placeholder: t(".search") %>
+            <% end %>
+          </div>
+        </div>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr class="row_custom header">
+            <th class="cell_custom"><%= t ".id" %></th>
+            <th class="cell_custom"><%= t ".name" %></th>
+            <th class="cell_custom"><%= t ".parent_category" %></th>
+            <th class="cell_custom"><%= t "view.action" %></th>
+          </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "categories", collection: @categories, as: :category %>
+          </tbody>
+        </table>
+        <div class="pag">
+          <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

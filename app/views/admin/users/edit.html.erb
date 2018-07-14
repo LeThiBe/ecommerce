@@ -1,0 +1,45 @@
+<% provide :title, t(".edit") %>
+<% provide :button_text, t(".update") %>
+<% provide :is_edit, "true" %>
+<% provide(:url, admin_user_path) %>
+<div class="container-fluid">
+  <div class="content">
+    <h1><%= t "update_profile" %></h1>
+    <div class="row col-md-2 col-md-offset-3 user_avatar" align="center">
+      <%= show_avatar_for @user %>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+       <%= form_for @user, url: yield(:url) do |f| %>
+         <%= render "shared/error_messages", object: f.object %>
+
+         <% if yield(:is_edit)=="true" %>
+         <%= f.label :image %>
+         <%= f.file_field :image %>
+         <% end %>
+         <br>
+         <%= f.label :name, t("name") %>
+         <%= f.text_field :name, class: "form-control" %>
+
+         <%= f.label :email, t("email") %>
+         <%= f.email_field :email, class: "form-control" %>
+
+         <%= f.label :address, t("address") %>
+         <%= f.text_field :address, class: "form-control" %>
+
+         <%= f.label :phone, t("phone") %>
+         <%= f.text_field :phone, class: "form-control" %>
+
+         <%= f.label :active %>
+         <%= f.check_box :activated %>
+
+         <%= f.label :is_admin %>
+         <%= f.check_box :is_admin %>
+         <br>
+         <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+       <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

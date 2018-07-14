@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-  before_action :load_line_item, only: [:update, :destroy]
+  before_action :load_line_item, only: [:show, :update, :destroy]
   # GET /line_items
   # GET /line_items.json
   def index
@@ -14,6 +14,8 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1/edit
   def edit; end
+
+  def show; end
 
   # POST /line_items
   # POST /line_items.json
@@ -34,7 +36,7 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     if @line_item.update line_item_params
-      redirect_to carts_path
+      redirect_to cart_path(current_cart)
     else
       flash[:danger] = t "line_items.update_failed"
     end
@@ -48,7 +50,7 @@ class LineItemsController < ApplicationController
     else
       flash[:danger] = t "line_items.delete_failed"
     end
-    redirect_to carts_path(@current_cart)
+    redirect_to products_path
   end
 
   def load_line_item

@@ -1,12 +1,24 @@
-<h2>All Orders</h2>
-
-<% @orders.each do |order| %>
-  <p>Name: <%= order.name %></p>
-  <p>Email: <%= order.email %></p>
-  <p>Line Items: </p>
-  <ul>
-    <% order.line_items.each do |item| %>
-      <li><%= item.quantity %> x <%= item.product.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<section class="order_product">
+  <div class="container">
+    <div class="row">
+        <h1><%= t ".your_order" %></h1>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><%= t ".order_number" %></th>
+              <th><%= t ".date" %></th>
+              <th><%= t ".address" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".phone" %></th>
+              <th><%= t ".total" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t "details" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "order", collection: @order_products, as: :order %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :load_products, only: %i(show)
   before_action :load_cates, except: %i(destroy update)
   before_action :load_cate, except: %i(index create new)
   before_action :avoid_destroy_when_have_sub_category, only: :destroy
@@ -33,7 +32,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @products = @category.products.paginate(page: params[:page],
+      per_page: 5)
+  end
 
   def destroy
     if @category.destroy
@@ -61,10 +63,6 @@ class CategoriesController < ApplicationController
 
   def load_cates
     @categories = Category.all
-  end
-
-  def load_products
-    @products = Product.search_by_cate params[:id]
   end
 
   def category_params

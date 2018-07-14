@@ -1,15 +1,18 @@
+pag_max: 10
 user:
   avatar_size: 50
   email_max_length: 255
   name_max_length: 50
   password_min_length: 6
   hour_expired: 2
+  pag_max: 10
 session:
   remember_me: "1"
 product:
-  product_max_size: 200
   pag_max: 12
+  product_max_size: 200
   name_max_length: 50
   desc_max_length: 300
 cart:
   quantity: 1
+email: "15i1lethibe@gmail.com"

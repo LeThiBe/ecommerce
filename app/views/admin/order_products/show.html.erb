@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header"><i class="fa fa-table"></i> <%= yield(:table) %></div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr class="row_custom header">
+              <th class="cell_custom"><%= t ".id" %></th>
+              <th class="cell_custom"><%= t ".image" %></th>
+              <th class="cell_custom"><%= t ".name" %></th>
+              <th class="cell_custom"><%= t ".quantity" %></th>
+              <th class="cell_custom"><%= t ".price" %></th>
+              <th class="cell_custom"><%= t ".price_total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "detail", collection: @line_items, as: :item %>
+          </tbody>
+        </table>
+        <h5><%= t ".order_number" %><%= @order.id %></h5>
+        <h5><%= t ".order_status" %><%= @order.status %></h5>
+        <%= form_for @order, url: admin_order_product_path do |f| %>
+          <% if @order.in_progress? %>
+            <div><%= f.hidden_field :status, value: "approved" %>
+            <%= f.submit %>
+          <% else %>
+            <%= button_tag t(".accepted"), type: :button, class: "btn btn-primary", disabled: true %>
+          <% end %>
+        <% end %>
+    </div>
+    </div>
+  </div>
+</div>

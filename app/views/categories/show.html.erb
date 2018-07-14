@@ -1,0 +1,14 @@
+<% provide :title, t(".title") %>
+<%= render "shared/navbar" %>
+<div class="prdt">
+  <div class="container">
+    <div class="prdt-top">
+      <div class="product-one">
+        <%= render partial: "products/product" %>
+      </div>
+    </div>
+  </div>
+  <div class="pag">
+  <%= will_paginate @products %>
+  </div>
+</div>

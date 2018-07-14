@@ -10,7 +10,7 @@
         <h3><%= t ".exits_user" %></h3>
         <div class="account-bottom">
           <%= form_for :session, url: login_path do |f| %>
-            <%= f.email_field :email, placeholder: t(".email"), required: true %>
+            <%= f.text_field :email, placeholder: t(".email"), required: true %>
             <%= f.password_field :password, placeholder: t(".password"), required: true %>
           <div class="address">
             <%= f.label :remember_me do %>
@@ -18,7 +18,7 @@
               <span><%= t ".remember_me" %></span>
             <% end %>
             <div class="clearfix"></div>
-            <%= link_to t(".forgot_pass"), "#",class: "forgot" %>
+            <%= link_to t(".forgot_pass"), new_password_reset_path,class: "forgot" %>
             <%= f.submit t(".title") %>
           </div>
           <% end %>
@@ -27,7 +27,7 @@
       <div class="col-md-6 account-right account-left">
         <h3><%= t ".new_user" %></h3>
         <p><%= t ".content" %></p>
-        <%= link_to t(".create"), "#" %>
+        <%= link_to t(".create"), register_path %>
       </div>
       <div class="clearfix"></div>
     </div>

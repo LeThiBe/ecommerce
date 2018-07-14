@@ -12,5 +12,11 @@
   <strong>Quantity:</strong>
   <%= @line_item.quantity %>
 </p>
+<p>
+  <strong>price:</strong>
+  <%= @line_item.total_price %>
+</p>
+
+
 <%= link_to "Edit", edit_line_item_path(@line_item) %> |
 <%= link_to "Back", line_items_path %>

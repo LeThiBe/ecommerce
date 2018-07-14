@@ -1,0 +1,20 @@
+<% @products.each do |p| %>
+  <tr class="row_custom">
+    <td class="cell_custom"><%= p.id %></td>
+    <td class="cell_custom"><%= image_tag(p.image) %></td>
+    <td class="cell_custom"><%= p.name %></td>
+    <td class="cell_custom"><%= p.description %></td>
+    <td class="cell_custom"><%= p.price %></td>
+    <td class="cell_custom"><%= p.size %></td>
+    <td class="cell_custom"><%= p.quantity %></td>
+    <td class="cell_custom"><%= p.discount %></td>
+    <td class="cell_custom"><%= p.category.name %></td>
+    <td><%= link_to t("view.edit"),
+      edit_admin_product_path(p), class: "btn btn-success"%>
+    </td>
+    <td><%= link_to t("view.delete"),
+      [:admin, p], method: :delete, class: "btn btn-danger",
+      data: {confirm: t("sure?")} %>
+    </td>
+  </tr>
+<% end %>
