@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1
   # GET /carts/1.json
-  def show;  end
+  def show; end
 
   # DELETE /carts/1
   # DELETE /carts/1.json

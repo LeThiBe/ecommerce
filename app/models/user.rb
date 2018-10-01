@@ -5,6 +5,12 @@ class User < ApplicationRecord
   has_many :order_products, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
+  ratyrate_rater
+  mount_uploader :image, AvatarUploader
+
+  scope :search_by_name, lambda{|search|
+    where("name LIKE ?", "%#{search}%") if search.present?
+  }
 
   mount_uploader :image, AvatarUploader
 

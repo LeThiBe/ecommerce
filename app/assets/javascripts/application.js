@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require rails-ujs
+//= require turbolinks
 //= require bootstrap
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
 //= require_tree ../../../vendor/assets/javascripts/public
+//= require jquery.raty
+//= require ratyrate
 //= require custom.js

@@ -14,14 +14,14 @@
             <div class="flexslider">
               <ul class="slides">
                 <li data-thumb="">
-                 <%= link_to image_tag(@products.image), :data => { :imagezoom => "true" }, class: "img-responsive", alt: t(".alt") %>
+                 <%= link_to image_tag(@product.image), :data => { :imagezoom => "true" }, class: "img-responsive", alt: t(".alt") %>
                </li>
               </ul>
             </div>
             <!-- FlexSlider -->
-            <script src="js/imagezoom.js"></script>
+           <!--  <script src="js/imagezoom.js"></script>
             <script defer src="js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /> -->
             <script>
               // Can also be used with $(document).ready()
               $(window).load(function() {
@@ -34,7 +34,7 @@
           </div>
           <div class="col-md-7 single-top-right">
             <div class="single-para simpleCart_shelfItem">
-              <h2><%= @products.name %></h2>
+              <h2><%= @product.name %></h2>
               <div class="star-on">
                 <ul class="star-footer">
                   <li><a href="#"><i> </i></a></li>
@@ -48,15 +48,15 @@
                 </div>
                 <div class="clearfix"> </div>
               </div>
-              <h5><%= number_to_currency(@products.price) %></h5>
-              <h7>Quantity: <%= @products.quantity %></h7>
-              <p><%= @products.description %></h2></p>
+              <h5><%= number_to_currency(@product.price) %></h5>
+              <h7>Quantity: <%= @product.quantity %></h7>
+              <p><%= @product.description %></h2></p>
               <ul class="tag-men">
                 <li><span>TAG: </span>
-                  <span class="women1"><%= @products.category.name %></h2>,</span></li>
+                  <span class="women1"><%= @product.category.name %></h2>,</span></li>
                 </ul>
                 <div class="item_add">
-                  <%= button_to "Add to Cart", line_items_path(:product_id => @products), :remote => true %>
+                  <%= button_to "Add to Cart", line_items_path(:product_id => @product), :remote => true %>
                 </div>
             </div>
           </div>
@@ -66,7 +66,47 @@
           <ul class="menu_drop">
             <li class="item1"><a href="#"><%= image_tag image_url("arrow.png"), alt: "" %>Reviews</a></li>
           </ul>
-        </div>
+
+          <div class="spr-container">
+            <div class="spr-header">
+              <h2 class="spr-header-title">Customer Reviews</h2>
+              <div class="spr-summary">
+                <span class="spr-summary-caption">No reviews yet</span><span class="spr-summary-actions">
+                  <a href="#" class="btn" data-toggle="modal" data-target="#myModal">Write a review</a>
+                </span>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Write a review</h4>
+                      </div>
+                      <%= form_for([@product, @product.reviews.build]) do |f| %>
+                        <%= f.label :rating %>
+                        <div class="star-on">
+                          <div class="small-2 large-4 columns">
+                            <% if current_user %>
+                              <%= rating_for @product, "quality"  %>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                          <%= f.label :content %>
+                          <%= f.text_area :conten, rows: "9", cols: "66" %>
+                          <%= f.submit "Submit Review", class: "spr-button spr-button-primary button button-primary btn btn-primary" %>
+                          <div class="clearfix"> </div>
+                        <% end %>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       <!--start-col-md-9 single-main-left-->
       </div>
     <!--start-single-main-->

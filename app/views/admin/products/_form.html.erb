@@ -1,33 +1,30 @@
 <%= form_for(@products, url: yield(:url)) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <% if yield(:is_edit?) == "true" %>
+    <div class="edit_form_image">
+      <%= show_image_for @products %>
+    </div>
+  <% end %>
+  <%= f.label :image %>
+  <%= f.file_field :image  %>
+  <br>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, class: "form-control", placeholder: "Name" %>
 
-    <%= render "shared/error_messages", object: f.object %>
-    <% if yield(:is_edit?) == "true" %>
-      <div class="edit_form_image">
-        <%= show_image_for @products %>
-      </div>
-    <% end %>
+  <%= f.label :description %>
+  <%= f.text_field :description, required: true, class: "form-control", placeholder: "Description" %>
 
-      <%= f.label :image %>
-      <%= f.file_field :image  %>
-      <br>
-      <%= f.label :name %>
-      <%= f.text_field :name, required: true, class: "form-control", placeholder: "Name" %>
+  <%= f.label :price %>
+  <%= f.number_field :price, required: true, class: "form-control", placeholder: "Price" %>
 
-      <%= f.label :description %>
-      <%= f.text_field :description, required: true, class: "form-control", placeholder: "Description" %>
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity, required: true, class: "form-control", placeholder: "Quantity" %>
 
-      <%= f.label :price %>
-      <%= f.number_field :price, required: true, class: "form-control", placeholder: "Price" %>
+  <%= f.label :size %>
+  <%= f.text_field :size, required: true, class: "form-control", placeholder: "Size" %>
 
-      <%= f.label :quantity %>
-      <%= f.number_field :quantity, required: true, class: "form-control", placeholder: "Quantity" %>
-
-      <%= f.label :size %>
-      <%= f.text_field :size, required: true, class: "form-control", placeholder: "Size" %>
-
-      <%= f.label :category_id %>
-      <%= f.collection_select :category_id, @categories, :id, :name, {promt: t(".choose_cate")} %>
-      <br>
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, @categories, :id, :name, {promt: t(".choose_cate")} %>
+  <br>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

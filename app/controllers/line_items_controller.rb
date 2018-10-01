@@ -50,7 +50,7 @@ class LineItemsController < ApplicationController
     else
       flash[:danger] = t "line_items.delete_failed"
     end
-    redirect_to products_path
+    redirect_to carts_path(@current_cart)
   end
 
   def load_line_item
